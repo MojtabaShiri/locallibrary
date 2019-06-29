@@ -1,0 +1,12 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+  <h2>Author List</h2>
+  {% for author in author_list%}
+    <h3><a href="{% url 'catalog:author-detail' author.id %}">{{ author.last_name }}</a></h3>
+    <p> Author first name: {{author.first_name}} </p>
+    <p> date of birth: {{author.date_of_birth}} </p>
+    <p> date of death: {{author.date_of_death}} </p>
+    <hr>
+  {% endfor %}
+{% endblock %}
